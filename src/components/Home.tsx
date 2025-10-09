@@ -76,10 +76,10 @@ function Home() {
           </div>
           <p className="text-gray-700 mb-6 text-base md:text-lg">
             I’m a data analyst with 1+ years of experience. I’m skilled in
-            building interactive dashboards with Tableau and integrating data
-            from diverse databases such as MySQL, PostgreSQL, Redshift, Amazon
-            RDS, and Microsoft SQL Server. I’m also proficient in Python for
-            analyzing data and API development.
+            Python for data analysis and API development, building interactive
+            dashboards with Tableau, integrating data from various databases,
+            and writing and optimizing SQL queries. I’m eager to learn and can
+            quickly adapt to new tools or requirements when needed.
           </p>
           <h2 className="text-sky-600 font-semibold mb-3 text-lg">
             Core Expertise:
@@ -101,47 +101,95 @@ function Home() {
               <span className="bg-sky-200 text-sky-700 px-3 py-1 rounded-full text-xs mr-2">
                 Databases
               </span>
-              MySQL, PostgreSQL, Redshift, Amazon RDS, MS SQL Server
+              MySQL, PostgreSQL, Redshift, Amazon RDS, MS SQL Server, MongoDB
             </li>
           </ul>
         </div>
       </div>
 
       {/* Education & Work Experience */}
-      <div className="w-full flex flex-col items-center gap-6">
-        <h1 className="text-3xl font-bold mb-6 text-center">
+      <div className="w-full flex flex-col items-center gap-8">
+        <h1 className="text-3xl font-bold text-center">
           Education & Work Experience
         </h1>
-        <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center">
+
+        <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center">
           {/* Education */}
-          <div className="bg-white border border-gray-200 rounded-xl shadow-md p-6 sm:p-8 w-80 flex flex-col items-center hover:shadow-lg hover:border-sky-500 hover:scale-105 transition-all duration-200">
-            <h3 className="text-lg font-semibold mb-2 text-center">
+          <div className="bg-white border border-gray-200 rounded-xl shadow-md p-8 w-80 flex flex-col hover:shadow-lg hover:border-sky-500 hover:scale-105 transition-all duration-200">
+            <h3 className="text-lg font-semibold text-center mb-1">
               Airlangga University
             </h3>
-            <p className="text-gray-700 mb-1 text-center">
+            <p className="text-gray-700 text-center mb-1">
               Bachelor's Degree in Statistics
             </p>
-            <p className="text-gray-500 text-sm text-center">
-              Aug 2018 – Nov 2022 | GPA 3.42/4.00
+            <p className="text-gray-500 text-sm text-center mb-3">
+              Aug 2018 – Nov 2022 | GPA 3.42 / 4.00
             </p>
+            <ul className="text-sm text-gray-600 list-disc list-inside space-y-1">
+              <li>
+                Studied core statistical methods including hypothesis testing,
+                regression (linear & logistic), ANOVA, time series analysis,
+                etc.
+              </li>
+              <li>
+                Used R, C++, Excel, Minitab, SPSS, Tableau, and ArcView GIS for
+                coursework and academic projects.
+              </li>
+            </ul>
           </div>
 
           {/* Work Experience 1 */}
-          <div className="bg-white border border-gray-200 rounded-xl shadow-md p-6 sm:p-8 w-80 flex flex-col items-center hover:shadow-lg hover:border-sky-500 hover:scale-105 transition-all duration-200">
-            <h3 className="text-lg font-semibold mb-2 text-center">
+          <div className="bg-white border border-gray-200 rounded-xl shadow-md p-8 w-80 flex flex-col hover:shadow-lg hover:border-sky-500 hover:scale-105 transition-all duration-200">
+            <h3 className="text-lg font-semibold text-center mb-1">
               PT Pos Indonesia – Bootcamp Digital Talent II
             </h3>
-            <p className="text-gray-700 mb-1 text-center">
+            <p className="text-gray-700 text-center mb-1">
               Jan 2024 – Jul 2024
             </p>
+            <p className="text-gray-500 text-sm text-center mb-3">
+              Bootcamp Program
+            </p>
+            <ul className="text-sm text-gray-600 list-disc list-inside space-y-1">
+              <li>
+                Developed internal systems (ITMS NOVA & SiPenDi) with a small
+                cross-functional team.
+              </li>
+              <li>
+                Designed business processes, prototypes, and database schemas.
+              </li>
+              <li>
+                Created and optimized ER diagrams for application data flow.
+              </li>
+            </ul>
           </div>
 
           {/* Work Experience 2 */}
-          <div className="bg-white border border-gray-200 rounded-xl shadow-md p-6 sm:p-8 w-80 flex flex-col items-center hover:shadow-lg hover:border-sky-500 hover:scale-105 transition-all duration-200">
-            <h3 className="text-lg font-semibold mb-2 text-center">
+          <div className="bg-white border border-gray-200 rounded-xl shadow-md p-8 w-80 flex flex-col hover:shadow-lg hover:border-sky-500 hover:scale-105 transition-all duration-200">
+            <h3 className="text-lg font-semibold text-center mb-1">
               PT Pos Indonesia – Reporting Data Analytics
             </h3>
-            <p className="text-gray-700 mb-1 text-center">Aug 2024 – Present</p>
+            <p className="text-gray-700 text-center mb-1">Aug 2024 – Present</p>
+            <p className="text-gray-500 text-sm text-center mb-3">
+              Data Analyst
+            </p>
+            <ul className="text-sm text-gray-600 list-disc list-inside space-y-1">
+              <li>
+                Performed end-to-end data analysis using Python (Pandas, NumPy,
+                Matplotlib).
+              </li>
+              <li>
+                Built interactive Tableau dashboards with calculated fields &
+                custom measures.
+              </li>
+              <li>
+                Ensured data quality through automated validation and monitoring
+                scripts.
+              </li>
+              <li>
+                Integrated dashboards with multiple data sources (SQL, APIs).
+              </li>
+              <li>Developed and documented APIs using FastAPI and Pydantic.</li>
+            </ul>
           </div>
         </div>
       </div>

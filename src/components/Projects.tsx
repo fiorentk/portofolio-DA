@@ -5,7 +5,6 @@ import sentimentAPIImg from "../assets/real-API/sentiment-analyze-api.png";
 import predictrouteAPIImg from "../assets/real-API/predict-route-api.jpg";
 import itms from "../assets/Bootcamp-Digital-Talent-II-PROJECT/itms.png";
 import sipendi from "../assets/Bootcamp-Digital-Talent-II-PROJECT/sipendi.png";
-
 import bpjsImg from "../assets/dashboard/bpjs.png";
 import deliveryPerformanceImg from "../assets/dashboard/delivery-performance.png";
 import foodMarketImg from "../assets/dashboard/food-market.png";
@@ -15,9 +14,29 @@ import posajaEngagementImg from "../assets/dashboard/posaja-engagement.png";
 import posajaPerformanceImg from "../assets/dashboard/posaja-performance.png";
 import remittanceFraudImg from "../assets/dashboard/remittance-fraud.png";
 import revenueDeclineImg from "../assets/dashboard/revenue-decline.png";
+import rocketImg from "../assets/study-case/rockethome.png";
+import rocket1 from "../assets/study-case/rocket1.png";
+import rocket2 from "../assets/study-case/rocket2.png";
+import rocket3 from "../assets/study-case/rocket3.png";
+import rocket4 from "../assets/study-case/rocket4.png";
+import churnImg from "../assets/study-case/churnhome.png";
+import churn1 from "../assets/study-case/churn1.png";
+import churn2 from "../assets/study-case/churn2.png";
+import churn3 from "../assets/study-case/churn3.png";
+import churn4 from "../assets/study-case/churn4.png";
+import creditImg from "../assets/study-case/credithome.png";
+import credit1 from "../assets/study-case/credit1.png";
+import credit2 from "../assets/study-case/credit2.png";
+import credit3 from "../assets/study-case/credit3.png";
+import credit4 from "../assets/study-case/credit4.png";
+import housepriceImg from "../assets/study-case/housepricehome.png";
+import houseprice1 from "../assets/study-case/houseprice1.png";
+import houseprice2 from "../assets/study-case/houseprice2.png";
+import houseprice3 from "../assets/study-case/houseprice3.png";
+import houseprice4 from "../assets/study-case/houseprice4.png";
 
 interface Screenshot {
-  title: string;
+  title?: string;
   img: string;
 }
 
@@ -34,7 +53,6 @@ interface Project {
 }
 
 const projectsData: Project[] = [
-  // Dashboards
   {
     id: 1,
     title: "PosAja! Customer Engagement Dashboard",
@@ -44,7 +62,7 @@ const projectsData: Project[] = [
     longDesc:
       "Displays number of accesses, active users, and new registrations, visualized with pie charts, bar charts, timelines, and tables (DoD, WoW, MoM, YoY). Equipped with multiple filters.",
     tools: "Tableau",
-    screenshots: [{ title: "PosAja Engagement", img: posajaEngagementImg }],
+    screenshots: [{ img: posajaEngagementImg }],
     skills: ["Tableau"],
   },
   {
@@ -56,7 +74,7 @@ const projectsData: Project[] = [
     longDesc:
       "Displays active users, transactions, and revenue trends using pie charts, bar charts, timelines, and tables (DoD, WoW, MoM, YoY). Equipped with multiple filters.",
     tools: "Tableau",
-    screenshots: [{ title: "PosAja Performance", img: posajaPerformanceImg }],
+    screenshots: [{ img: posajaPerformanceImg }],
     skills: ["Tableau"],
   },
   {
@@ -68,7 +86,7 @@ const projectsData: Project[] = [
     longDesc:
       "This dashboard helps identify and monitor fraud risks in remittance services by detecting unusual activities and displaying the date, office location details, and the name of potential suspects.",
     tools: "Tableau",
-    screenshots: [{ title: "Remittance Fraud", img: remittanceFraudImg }],
+    screenshots: [{ img: remittanceFraudImg }],
     skills: ["Tableau"],
   },
   {
@@ -80,7 +98,7 @@ const projectsData: Project[] = [
     longDesc:
       "Display transaction, revenue, distribution, and stock using pie charts, bar charts, and timelines. Equipped with multiple filters.",
     tools: "Tableau",
-    screenshots: [{ title: "Food Market", img: foodMarketImg }],
+    screenshots: [{ img: foodMarketImg }],
     skills: ["Tableau"],
   },
   {
@@ -91,11 +109,9 @@ const projectsData: Project[] = [
     longDesc:
       "Display PLN's transaction, revenue, and admin fee using pie charts, bar charts, and timelines. Equipped with multiple filters.",
     tools: "Tableau",
-    screenshots: [{ title: "PLN Transaction", img: plnImg }],
+    screenshots: [{ img: plnImg }],
     skills: ["Tableau"],
   },
-
-  // APIs
   {
     id: 6,
     title: "Sentiment Analysis API",
@@ -126,8 +142,6 @@ const projectsData: Project[] = [
     ],
     skills: ["Python", "FastAPI", "Docker"],
   },
-
-  // Analysis
   {
     id: 8,
     title:
@@ -137,10 +151,8 @@ const projectsData: Project[] = [
       "Analysis of suspected fraud in cash-in and cash-out activities.",
     longDesc:
       "Detailed fraud case analysis at counters focusing on cash-in and cash-out activities. Conducted with Python for data processing and Tableau for visualization to detect irregularities and patterns.",
-    tools: "Python, Tableau",
-    screenshots: [
-      { title: "Fraud Case Cash-in/Cash-Out", img: fraudCaseCiCoImg },
-    ],
+    tools: "Python, Jupyter Notebook, Pandas, Matplotlib, Seaborn, Tableau",
+    screenshots: [{ img: fraudCaseCiCoImg }],
     skills: ["Python", "Tableau"],
   },
   {
@@ -150,8 +162,8 @@ const projectsData: Project[] = [
     shortDesc: "Investigation of revenue decline patterns in PosAja! services.",
     longDesc:
       "Analysis of PosAja! revenue decline using Python and Tableau. Identified patterns, trends, and contributing factors to support business recovery strategies.",
-    tools: "Python, Tableau",
-    screenshots: [{ title: "Revenue Decline", img: revenueDeclineImg }],
+    tools: "Python, Jupyter Notebook, Pandas, Matplotlib, Seaborn, Tableau",
+    screenshots: [{ img: revenueDeclineImg }],
     skills: ["Python", "Tableau"],
   },
   {
@@ -161,8 +173,8 @@ const projectsData: Project[] = [
     shortDesc: "Retention analysis of BPJS Employment contribution payments.",
     longDesc:
       "Analytical report on BPJS Employment contribution payment retention. Used Python for data processing and Tableau for visualization to identify retention rates and improvement opportunities.",
-    tools: "Python, Tableau",
-    screenshots: [{ title: "BPJS", img: bpjsImg }],
+    tools: "Python, Jupyter Notebook, Pandas, Matplotlib, Seaborn, Tableau",
+    screenshots: [{ img: bpjsImg }],
     skills: ["Python", "Tableau"],
   },
   {
@@ -173,14 +185,10 @@ const projectsData: Project[] = [
       "Performance analysis of delivery operations for Semester 1 2024.",
     longDesc:
       "Data analysis and visualization report on delivery performance for the first semester of 2024. Provided insights into delivery times, success rates, and operational challenges using Python and Tableau.",
-    tools: "Python, Tableau",
-    screenshots: [
-      { title: "Delivery Performance", img: deliveryPerformanceImg },
-    ],
+    tools: "Python, Jupyter Notebook, Pandas, Matplotlib, Seaborn, Tableau",
+    screenshots: [{ img: deliveryPerformanceImg }],
     skills: ["Python", "Tableau"],
   },
-
-  // Bootcamp
   {
     id: 12,
     title: "Bootcamp Digital Talent II Project",
@@ -195,6 +203,85 @@ const projectsData: Project[] = [
       { title: "SiPenDi", img: sipendi },
     ],
     skills: ["Figma", "MySQL"],
+  },
+  {
+    id: 13,
+    title: "Predicting House Prices – Python (Study Case)",
+    homeImg: housepriceImg,
+    repoLink:
+      "https://github.com/fiorentk/Predicting-House-Prices-in-King-County-USA-Using-Linear-Polynomial-and-Ridge-Regression",
+    shortDesc:
+      "Built a regression model to predict house prices based on key features using Python.",
+    longDesc:
+      "Developed a machine learning model to predict house prices using datasets containing property features such as area, number of rooms, and location. The workflow included data cleaning, exploratory data analysis (EDA), feature engineering, model training with Linear Regression and Random Forest, and performance evaluation using RMSE and R² metrics.",
+    tools:
+      "Python, Jupyter Notebook, Pandas, Matplotlib, Seaborn, Scikit-learn",
+    screenshots: [
+      { img: houseprice1 },
+      { img: houseprice2 },
+      { img: houseprice3 },
+      { img: houseprice4 },
+    ],
+    skills: ["Python", "Machine Learning"],
+  },
+  {
+    id: 14,
+    title: "Rocket Landing Predictions – Python (Study Case)",
+    homeImg: rocketImg,
+    repoLink:
+      "https://github.com/fiorentk/Data-Science-Odyssey-in-Rocket-Landing-Prediction-Capstone-Project",
+    shortDesc:
+      "Predicted SpaceX rocket landing success using classification models in Python.",
+    longDesc:
+      "Analyzed SpaceX Falcon 9 launch data to predict whether a rocket’s first stage would land successfully. The project covered data preprocessing, EDA, feature encoding, model training (Logistic Regression, Decision Tree, SVM), and model evaluation with accuracy and confusion matrix metrics.",
+    tools:
+      "Python, Jupyter Notebook, Pandas, Matplotlib, Seaborn, Scikit-learn",
+    screenshots: [
+      { img: rocket1 },
+      { img: rocket2 },
+      { img: rocket3 },
+      { img: rocket4 },
+    ],
+    skills: ["Python", "Machine Learning"],
+  },
+  {
+    id: 15,
+    title: "Credit Score Classification – Python (Study Case)",
+    homeImg: creditImg,
+    repoLink:
+      "https://github.com/fiorentk/Credit-Score-Classification-Using-Decision-Tree-KNN-and-Random-Forest",
+    shortDesc:
+      "Built a classification model to categorize customer credit scores as good, standard, or poor.",
+    longDesc:
+      "Performed data preprocessing and analysis on financial datasets to classify customer credit scores. Trained and compared multiple models (Logistic Regression, Random Forest, XGBoost) to find the best-performing algorithm. Evaluated results using precision, recall, and F1-score metrics.",
+    tools: "Python, Scikit-learn, Pandas, Matplotlib, Seaborn",
+    screenshots: [
+      { img: credit1 },
+      { img: credit2 },
+      { img: credit3 },
+      { img: credit4 },
+    ],
+    skills: ["Python", "Machine Learning"],
+  },
+  {
+    id: 16,
+    title: "Customer Churn Prediction – Python (Study Case)",
+    homeImg: churnImg,
+    repoLink:
+      "https://github.com/fiorentk/Predicting-Customers-Churn-Using-Decision-Tree-and-Random-Forest-Project-from-HabisKerja",
+    shortDesc:
+      "Predicted customer churn using machine learning to identify at-risk users.",
+    longDesc:
+      "Built a churn prediction model using a telecom dataset. Processed data through cleaning, feature selection, and encoding. Trained multiple models (Logistic Regression, Random Forest, Gradient Boosting) to predict churn and analyzed feature importance to identify key churn drivers.",
+    tools:
+      "Python, Jupyter Notebook, Pandas, Matplotlib, Seaborn, Scikit-learn",
+    screenshots: [
+      { img: churn1 },
+      { img: churn2 },
+      { img: churn3 },
+      { img: churn4 },
+    ],
+    skills: ["Python", "Machine Learning"],
   },
 ];
 

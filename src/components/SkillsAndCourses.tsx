@@ -1,13 +1,21 @@
 // Import images
+import pythonLogo from "../assets/logo/python-logo.png";
 import pandasLogo from "../assets/logo/pandas-logo.png";
+import jupyterLogo from "../assets/logo/jupyter-logo.png";
 import powerbiLogo from "../assets/logo/powerbi-logo.png";
 import tableauLogo from "../assets/logo/tableau-logo.png";
-import gdsLogo from "../assets/logo/google-data-studio-logo.png";
-import pythonLogo from "../assets/logo/python-logo.png";
-import githubLogo from "../assets/logo/github.png";
+import lookerLogo from "../assets/logo/looker-logo.png";
 import mysqlLogo from "../assets/logo/mysql-logo.png";
 import postgresqlLogo from "../assets/logo/postgresql-logo.png";
-import mssqlLogo from "../assets/logo/msqls-logo.png";
+import mongodbLogo from "../assets/logo/mongodb-logo.png";
+import githubLogo from "../assets/logo/github.png";
+import awsLogo from "../assets/logo/aws-logo.png";
+import reactLogo from "../assets/logo/react-logo.png";
+import jsLogo from "../assets/logo/js-logo.png";
+import tsLogo from "../assets/logo/ts-logo.png";
+import linuxLogo from "../assets/logo/linux-command-logo.png";
+import trelloLogo from "../assets/logo/trello-logo.png";
+import microsoftLogo from "../assets/logo/microsoft-logo.png";
 
 interface Skill {
   title: string;
@@ -15,6 +23,13 @@ interface Skill {
   img2?: string;
   img3?: string;
   points: string[];
+}
+
+interface OtherSkill {
+  title: string;
+  img: string;
+  img2?: string;
+  img3?: string;
 }
 
 interface Course {
@@ -27,37 +42,63 @@ function SkillsAndCourses() {
     {
       title: "Python",
       img: pythonLogo,
-      img2: pandasLogo,
+      img2: jupyterLogo,
+      img3: pandasLogo,
       points: [
-        "Data analysis (NumPy, Pandas), visualization (Matplotlib, Seaborn), machine learning (Scikit-learn)",
-      ],
-    },
-    {
-      title: "Data Visualization",
-      img: tableauLogo,
-      img2: powerbiLogo,
-      img3: gdsLogo,
-      points: [
-        "Design interactive dashboards with Tableau (calculated fields, filters, parameters).",
-        "Connect dashboards to multiple data sources (Databases, Excel, Google Sheets).",
+        "Data analysis (Jupyter Notebook, NumPy, Pandas)",
+        "Visualization (Matplotlib, Seaborn)",
+        "ML (Scikit-learn)",
+        "API development (FastAPI, Pydantic)",
       ],
     },
     {
       title: "Databases",
       img: mysqlLogo,
       img2: postgresqlLogo,
-      img3: mssqlLogo,
+      img3: mongodbLogo,
       points: [
-        "Write complex SQL queries for reporting & analysis.",
-        "Optimize queries using indexes, views, and joins for better performance.",
+        "Relational: MySQL, PostgreSQL, Amazon Redshift, Microsoft SQL Server",
+        "NoSQL: MongoDB",
       ],
     },
     {
-      title: "Version Control (Git)",
-      img: githubLogo,
+      title: "Data Visualization",
+      img: tableauLogo,
+      img2: powerbiLogo,
+      img3: lookerLogo,
       points: [
-        "Manage projects with Git/GitHub (branches, commits, pull requests).",
+        "Design dashboards in Tableau, Power BI, and Looker",
+        "Integrate multiple data sources for reporting",
       ],
+    },
+  ];
+
+  const otherSkills: OtherSkill[] = [
+    {
+      title: "AWS (EC2, S3, IAM, RDS)",
+      img: awsLogo,
+    },
+    {
+      title: "Microsoft Office (Excel, PowerPoint, Word)",
+      img: microsoftLogo,
+    },
+    {
+      title: "Git/GitHub (repos, commits, branches, PRs)",
+      img: githubLogo,
+    },
+    {
+      title: "Linux basics & shell scripting",
+      img: linuxLogo,
+    },
+    {
+      title: "JavaScript, TypeScript, React.js",
+      img: jsLogo,
+      img2: tsLogo,
+      img3: reactLogo,
+    },
+    {
+      title: "Trello (Project management tools)",
+      img: trelloLogo,
     },
   ];
 
@@ -79,6 +120,10 @@ function SkillsAndCourses() {
       link: "https://drive.google.com/file/d/1sqJQcbSgrww1QLOOH0sFsqrKgvEzJsqL/view?usp=drive_link",
     },
     {
+      title: "AWS Cloud Technical Essentials",
+      link: "https://drive.google.com/file/d/1ZNg4bOtBFaCWqVPfwlyME5keFDJw8XLK/view?usp=drive_link",
+    },
+    {
       title: "Getting Started with Git and GitHub",
       link: "https://drive.google.com/file/d/1Wm27hXAswvRA_F52Vtkb7f1ay_L3ZlBk/view?usp=drive_link",
     },
@@ -91,12 +136,12 @@ function SkillsAndCourses() {
         {skills.map((skill) => (
           <div
             key={skill.title}
-            className="bg-white border border-gray-200 rounded-xl shadow-md p-5 w-60 text-center hover:shadow-lg hover:border-sky-500 hover:scale-105 transition-all duration-200"
+            className="bg-white border border-gray-200 rounded-xl shadow-md p-5 w-64 text-center hover:shadow-lg hover:border-sky-500 hover:scale-105 transition-all duration-200"
           >
             <div className="flex justify-center gap-2 mb-3">
               <img
                 src={skill.img}
-                alt={`${skill.title} Logo`}
+                alt={skill.title}
                 className="h-12 object-contain"
               />
               {skill.img2 && (
@@ -112,6 +157,39 @@ function SkillsAndCourses() {
                 <li key={idx}>{point}</li>
               ))}
             </ul>
+          </div>
+        ))}
+      </div>
+
+      <h3 className="text-xl font-bold mb-6 text-center">Other Tools</h3>
+      <div className="flex flex-wrap justify-center gap-6 mb-16">
+        {otherSkills.map((otherSkill) => (
+          <div
+            key={otherSkill.title}
+            className="bg-white border border-gray-200 rounded-xl shadow-md p-5 w-64 text-center hover:shadow-lg hover:border-sky-500 hover:scale-105 transition-all duration-200"
+          >
+            <div className="flex justify-center gap-2 mb-3">
+              <img
+                src={otherSkill.img}
+                alt={otherSkill.title}
+                className="h-12 object-contain"
+              />
+              {otherSkill.img2 && (
+                <img
+                  src={otherSkill.img2}
+                  alt=""
+                  className="h-12 object-contain"
+                />
+              )}
+              {otherSkill.img3 && (
+                <img
+                  src={otherSkill.img3}
+                  alt=""
+                  className="h-12 object-contain"
+                />
+              )}
+            </div>
+            <h3 className="text-lg font-semibold mb-2">{otherSkill.title}</h3>
           </div>
         ))}
       </div>
