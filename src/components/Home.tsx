@@ -198,8 +198,8 @@ function Home() {
       <div className="w-full flex flex-col items-center gap-6">
         <h1 className="text-3xl font-bold mb-6 text-center">Get in Touch</h1>
         <p className="mb-8 text-center max-w-md">
-          Reach me via Email, WhatsApp, or Telegram. Click the card below to
-          contact me.
+          Reach me via Email, WhatsApp, Telegram, or LinkedIn. Click the card
+          below to contact me. You can also check out my projects on GitHub.
         </p>
         <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-5 justify-center">
           {contacts.map((contact) => (
