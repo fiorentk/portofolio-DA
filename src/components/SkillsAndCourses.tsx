@@ -16,6 +16,7 @@ import tsLogo from "../assets/logo/ts-logo.png";
 import linuxLogo from "../assets/logo/linux-command-logo.png";
 import trelloLogo from "../assets/logo/trello-logo.png";
 import microsoftLogo from "../assets/logo/microsoft-logo.png";
+import salesforceLogo from "../assets/logo/salesforce-logo.png";
 
 interface Skill {
   title: string;
@@ -79,6 +80,11 @@ function SkillsAndCourses() {
       img: awsLogo,
     },
     {
+      title:
+        "Salesforce (basic understanding of CRM concepts, data model, and Lightning interface)",
+      img: salesforceLogo,
+    },
+    {
       title: "Microsoft Office (Excel, PowerPoint, Word)",
       img: microsoftLogo,
     },
@@ -122,6 +128,10 @@ function SkillsAndCourses() {
     {
       title: "AWS Cloud Technical Essentials",
       link: "https://drive.google.com/file/d/1ZNg4bOtBFaCWqVPfwlyME5keFDJw8XLK/view?usp=drive_link",
+    },
+    {
+      title: "Introduction to MongoDB",
+      link: "https://drive.google.com/file/d/1ZLHfKJc3qX3eoszeHtvbIUHqinI81Iyl/view?usp=sharing",
     },
     {
       title: "Getting Started with Git and GitHub",
