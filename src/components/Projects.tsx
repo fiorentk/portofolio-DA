@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-// Import images
+// Images
 import sentimentAPIImg from "../assets/real-API/sentiment-analyze-api.png";
 import predictrouteAPIImg from "../assets/real-API/predict-route-api.jpg";
 import itms from "../assets/Bootcamp-Digital-Talent-II-PROJECT/itms.png";
@@ -45,9 +45,7 @@ interface Project {
   title: string;
   homeImg: string;
   repoLink?: string;
-  shortDesc: string;
-  longDesc?: string;
-  tools?: string;
+  desc: string;
   screenshots: Screenshot[];
   skills: string[];
 }
@@ -57,11 +55,7 @@ const projectsData: Project[] = [
     id: 1,
     title: "PosAja! Customer Engagement Dashboard",
     homeImg: posajaEngagementImg,
-    shortDesc:
-      "Dashboard tracking customer engagement metrics like access, active users, and registrations.",
-    longDesc:
-      "Displays number of accesses, active users, and new registrations, visualized with pie charts, bar charts, timelines, and tables (DoD, WoW, MoM, YoY). Equipped with multiple filters.",
-    tools: "Tableau",
+    desc: "PosAja! customer engagement dashboard showing accesses, active users, and new registrations, visualized via various charts and tables (DoD, WoW, MoM, YoY), with multiple filters.",
     screenshots: [{ img: posajaEngagementImg }],
     skills: ["Tableau"],
   },
@@ -69,11 +63,7 @@ const projectsData: Project[] = [
     id: 2,
     title: "PosAja! Digital Business Performance Dashboard",
     homeImg: posajaPerformanceImg,
-    shortDesc:
-      "Dashboard tracking PosAja! digital business KPIs like users, transactions, and revenue.",
-    longDesc:
-      "Displays active users, transactions, and revenue trends using pie charts, bar charts, timelines, and tables (DoD, WoW, MoM, YoY). Equipped with multiple filters.",
-    tools: "Tableau",
+    desc: "PosAja! digital business dashboard tracking users, transactions, and revenue, visualized with various charts and tables (DoD, WoW, MoM, YoY), with multiple filters.",
     screenshots: [{ img: posajaPerformanceImg }],
     skills: ["Tableau"],
   },
@@ -81,11 +71,7 @@ const projectsData: Project[] = [
     id: 3,
     title: "Remittance Fraud Risk Dashboard",
     homeImg: remittanceFraudImg,
-    shortDesc:
-      "Dashboard highlighting potential fraud risks in remittance services.",
-    longDesc:
-      "This dashboard helps identify and monitor fraud risks in remittance services by detecting unusual activities and displaying the date, office location details, and the name of potential suspects.",
-    tools: "Tableau",
+    desc: "Dashboard highlighting potential fraud risks. Helps identify unusual activities and suspected fraud based on transaction behavior.",
     screenshots: [{ img: remittanceFraudImg }],
     skills: ["Tableau"],
   },
@@ -93,11 +79,7 @@ const projectsData: Project[] = [
     id: 4,
     title: "Cheap Food Market Operation Dashboard",
     homeImg: foodMarketImg,
-    shortDesc:
-      "Dashboard monitoring cheap food market operations and activities.",
-    longDesc:
-      "Display transaction, revenue, distribution, and stock using pie charts, bar charts, and timelines. Equipped with multiple filters.",
-    tools: "Tableau",
+    desc: "Dashboard monitoring cheap food market operations. Displays transaction, revenue, stock, and distribution with multiple filters.",
     screenshots: [{ img: foodMarketImg }],
     skills: ["Tableau"],
   },
@@ -105,10 +87,7 @@ const projectsData: Project[] = [
     id: 5,
     title: "PLN Transaction Dashboard",
     homeImg: plnImg,
-    shortDesc: "Dashboard tracking PLN transaction activities and performance.",
-    longDesc:
-      "Display PLN's transaction, revenue, and admin fee using pie charts, bar charts, and timelines. Equipped with multiple filters.",
-    tools: "Tableau",
+    desc: "Dashboard tracking PLN transaction performance. Shows transaction volume, revenue, and admin fee trends.",
     screenshots: [{ img: plnImg }],
     skills: ["Tableau"],
   },
@@ -118,74 +97,48 @@ const projectsData: Project[] = [
     homeImg: sentimentAPIImg,
     repoLink:
       "https://github.com/fiorentk/sentiment-analysis-google-maps-review",
-    shortDesc:
-      "API for automatic sentiment classification of Indonesian text reviews.",
-    longDesc:
-      "FastAPI + Docker backend for sentiment analysis of Indonesian text reviews. Uses HuggingFace transformer models to classify sentiment (positive, neutral, negative). Features text cleaning, typo correction, and ensemble outputs for higher accuracy.",
-    tools: "Python, FastAPI, Docker",
-    screenshots: [
-      { title: "Sentiment Analysis API (Postman)", img: sentimentAPIImg },
-    ],
-    skills: ["Python", "FastAPI", "Docker"],
+    desc: "API for sentiment classification of Indonesian reviews using FastAPI + Docker and transformer models.",
+    screenshots: [{ title: "Postman", img: sentimentAPIImg }],
+    skills: ["Python", "FastAPI"],
   },
   {
     id: 7,
     title: "Route Optimization API",
     homeImg: predictrouteAPIImg,
     repoLink: "https://github.com/fiorentk/Route-Optimization-Project",
-    shortDesc: "API for delivery route optimization and planning.",
-    longDesc:
-      "Backend service built with Python FastAPI and Docker for delivery route optimization. Implements Google OR-Tools for TSP variants, OSRM & Geopy for distance calculations, and Pandas/Requests for data processing. Outputs efficient routes with fuel and cost estimates.",
-    tools: "Python, FastAPI, Docker",
-    screenshots: [
-      { title: "Route Optimization API (Postman)", img: predictrouteAPIImg },
-    ],
-    skills: ["Python", "FastAPI", "Docker"],
+    desc: "API for delivery route optimization using OR-Tools, OSRM, and Geopy to generate efficient routes.",
+    screenshots: [{ title: "Postman", img: predictrouteAPIImg }],
+    skills: ["Python", "FastAPI"],
   },
   {
     id: 8,
-    title:
-      "Analysis of Suspected Fraud Cases in Cash-In and Cash-Out Activities at Counters",
+    title: "Fraud Case Analysis (Cash-In & Cash-Out)",
     homeImg: fraudCaseCiCoImg,
-    shortDesc:
-      "Analysis of suspected fraud in cash-in and cash-out activities.",
-    longDesc:
-      "Detailed fraud case analysis at counters focusing on cash-in and cash-out activities. Conducted with Python for data processing and Tableau for visualization to detect irregularities and patterns.",
-    tools: "Python, Jupyter Notebook, Pandas, Matplotlib, Seaborn, Tableau",
+    desc: "Python-based analysis with Tableau visualization to detect irregular transaction patterns in cash-in & cash-out.",
     screenshots: [{ img: fraudCaseCiCoImg }],
     skills: ["Python", "Tableau"],
   },
   {
     id: 9,
-    title: "Analysis Report of the Revenue Decline in PosAja!",
+    title: "Revenue Decline Analysis (PosAja!)",
     homeImg: revenueDeclineImg,
-    shortDesc: "Investigation of revenue decline patterns in PosAja! services.",
-    longDesc:
-      "Analysis of PosAja! revenue decline using Python and Tableau. Identified patterns, trends, and contributing factors to support business recovery strategies.",
-    tools: "Python, Jupyter Notebook, Pandas, Matplotlib, Seaborn, Tableau",
+    desc: "Python-based analysis with Tableau visualization to identified trends and business factors contributing to PosAja!'s revenue decline.",
     screenshots: [{ img: revenueDeclineImg }],
     skills: ["Python", "Tableau"],
   },
   {
     id: 10,
-    title: "Analysis Report of BPJS Employment Contribution Payment Retention",
+    title: "BPJS Payment Retention Analysis",
     homeImg: bpjsImg,
-    shortDesc: "Retention analysis of BPJS Employment contribution payments.",
-    longDesc:
-      "Analytical report on BPJS Employment contribution payment retention. Used Python for data processing and Tableau for visualization to identify retention rates and improvement opportunities.",
-    tools: "Python, Jupyter Notebook, Pandas, Matplotlib, Seaborn, Tableau",
+    desc: "Python-based analysis with Tableau visualization that provided insight on BPJS employment contribution payment to identify retention rates and improvement opportunities.",
     screenshots: [{ img: bpjsImg }],
     skills: ["Python", "Tableau"],
   },
   {
     id: 11,
-    title: "Analysis Report of Delivery Performance Semester 1 2024",
+    title: "Pos Delivery Performance Analysis",
     homeImg: deliveryPerformanceImg,
-    shortDesc:
-      "Performance analysis of delivery operations for Semester 1 2024.",
-    longDesc:
-      "Data analysis and visualization report on delivery performance for the first semester of 2024. Provided insights into delivery times, success rates, and operational challenges using Python and Tableau.",
-    tools: "Python, Jupyter Notebook, Pandas, Matplotlib, Seaborn, Tableau",
+    desc: "Python-based analysis with Tableau visualization that provided insight on Pos delivery performance such as delivery's success rates, and operational challenges.",
     screenshots: [{ img: deliveryPerformanceImg }],
     skills: ["Python", "Tableau"],
   },
@@ -193,214 +146,133 @@ const projectsData: Project[] = [
     id: 12,
     title: "Bootcamp Digital Talent II Project",
     homeImg: itms,
-    shortDesc:
-      "Developed ITMS NOVA and SiPenDi applications as part of Digital Talent Bootcamp.",
-    longDesc:
-      "Contributed to the development of ITMS NOVA and SiPenDi applications during the Digital Talent Bootcamp. Responsibilities included preparing Business and System Requirement Specifications, designing business processes, creating app prototypes with Figma, and structuring MySQL databases.",
-    tools: "Figma, MySQL",
+    desc: "Developed ITMS NOVA and SiPenDi apps including SRS, business process design, Figma prototype, and MySQL schema.",
     screenshots: [
       { title: "ITMS NOVA", img: itms },
       { title: "SiPenDi", img: sipendi },
     ],
-    skills: ["Figma", "MySQL"],
+    skills: ["MySQL", "Figma"],
   },
   {
     id: 13,
-    title: "Predicting House Prices – Python (Study Case)",
+    title: "House Price Prediction",
     homeImg: housepriceImg,
     repoLink:
       "https://github.com/fiorentk/Predicting-House-Prices-in-King-County-USA-Using-Linear-Polynomial-and-Ridge-Regression",
-    shortDesc:
-      "Built a regression model to predict house prices based on key features using Python.",
-    longDesc:
-      "Developed a machine learning model to predict house prices using datasets containing property features such as area, number of rooms, and location. The workflow included data cleaning, exploratory data analysis (EDA), feature engineering, model training with Linear Regression and Random Forest, and performance evaluation using RMSE and R² metrics.",
-    tools:
-      "Python, Jupyter Notebook, Pandas, Matplotlib, Seaborn, Scikit-learn",
+    desc: "Built a machine learning model in Python to predict house prices from features like area, rooms, and location, including data cleaning, EDA, feature engineering, training (Linear Regression & Random Forest), and evaluation (RMSE, R²).",
     screenshots: [
       { img: houseprice1 },
       { img: houseprice2 },
       { img: houseprice3 },
       { img: houseprice4 },
     ],
-    skills: ["Python", "Machine Learning"],
+    skills: ["Python"],
   },
   {
     id: 14,
-    title: "Rocket Landing Predictions – Python (Study Case)",
+    title: "Rocket Landing Prediction",
     homeImg: rocketImg,
     repoLink:
       "https://github.com/fiorentk/Data-Science-Odyssey-in-Rocket-Landing-Prediction-Capstone-Project",
-    shortDesc:
-      "Predicted SpaceX rocket landing success using classification models in Python.",
-    longDesc:
-      "Analyzed SpaceX Falcon 9 launch data to predict whether a rocket’s first stage would land successfully. The project covered data preprocessing, EDA, feature encoding, model training (Logistic Regression, Decision Tree, SVM), and model evaluation with accuracy and confusion matrix metrics.",
-    tools:
-      "Python, Jupyter Notebook, Pandas, Matplotlib, Seaborn, Scikit-learn",
+    desc: "Predicted SpaceX Falcon 9 first-stage landing success using Python, covering data preprocessing, EDA, feature encoding, model training (Logistic Regression, Decision Tree, SVM), and evaluation (accuracy, confusion matrix).",
     screenshots: [
       { img: rocket1 },
       { img: rocket2 },
       { img: rocket3 },
       { img: rocket4 },
     ],
-    skills: ["Python", "Machine Learning"],
+    skills: ["Python"],
   },
   {
     id: 15,
-    title: "Credit Score Classification – Python (Study Case)",
+    title: "Credit Score Classification",
     homeImg: creditImg,
     repoLink:
       "https://github.com/fiorentk/Credit-Score-Classification-Using-Decision-Tree-KNN-and-Random-Forest",
-    shortDesc:
-      "Built a classification model to categorize customer credit scores as good, standard, or poor.",
-    longDesc:
-      "Performed data preprocessing and analysis on financial datasets to classify customer credit scores. Trained and compared multiple models (Logistic Regression, Random Forest, XGBoost) to find the best-performing algorithm. Evaluated results using precision, recall, and F1-score metrics.",
-    tools: "Python, Scikit-learn, Pandas, Matplotlib, Seaborn",
+    desc: "Built a classification model to categorize customer credit scores (good, standard, poor) using Logistic Regression, Random Forest, and XGBoost, with data preprocessing, analysis, and evaluation via precision, recall, and F1-score.",
     screenshots: [
       { img: credit1 },
       { img: credit2 },
       { img: credit3 },
       { img: credit4 },
     ],
-    skills: ["Python", "Machine Learning"],
+    skills: ["Python"],
   },
   {
     id: 16,
-    title: "Customer Churn Prediction – Python (Study Case)",
+    title: "Customer Churn Prediction",
     homeImg: churnImg,
     repoLink:
       "https://github.com/fiorentk/Predicting-Customers-Churn-Using-Decision-Tree-and-Random-Forest-Project-from-HabisKerja",
-    shortDesc:
-      "Predicted customer churn using machine learning to identify at-risk users.",
-    longDesc:
-      "Built a churn prediction model using a telecom dataset. Processed data through cleaning, feature selection, and encoding. Trained multiple models (Logistic Regression, Random Forest, Gradient Boosting) to predict churn and analyzed feature importance to identify key churn drivers.",
-    tools:
-      "Python, Jupyter Notebook, Pandas, Matplotlib, Seaborn, Scikit-learn",
+    desc: "Built a churn prediction model for customers using Logistic Regression, Random Forest, and Gradient Boosting, including data cleaning, feature selection, encoding, and analysis of key churn drivers.",
     screenshots: [
       { img: churn1 },
       { img: churn2 },
       { img: churn3 },
       { img: churn4 },
     ],
-    skills: ["Python", "Machine Learning"],
+    skills: ["Python"],
   },
 ];
 
-function Projects() {
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+function SkillBadge({ skill }: { skill: string }) {
+  return (
+    <span className="bg-gray-100 px-3 py-1 rounded-lg text-sm shadow-sm">
+      {skill}
+    </span>
+  );
+}
 
-  if (selectedProject) {
-    return (
-      <div className="p-6 max-w-5xl mx-auto">
-        <button
-          className="mb-6 px-4 py-2 bg-gray-200 rounded-lg hover:bg-gray-300 flex items-center transition"
-          onClick={() => setSelectedProject(null)}
-        >
-          <span className="mr-2">&#8592;</span> Back
-        </button>
-
-        <h1 className="text-3xl font-bold mb-4 text-gray-800">
-          {selectedProject.title}
-        </h1>
-
-        <div className="mb-4 flex flex-wrap gap-2">
-          {selectedProject.skills.map((skill) => (
-            <div
-              key={skill}
-              className="bg-gray-100 px-3 py-1 rounded-lg text-sm shadow-sm"
-            >
-              {skill}
-            </div>
-          ))}
-        </div>
-
-        <div className="mb-4">
-          {selectedProject.repoLink ? (
-            <a
-              href={selectedProject.repoLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 underline hover:text-blue-800"
-            >
-              Repository
-            </a>
-          ) : (
-            <p className="text-gray-500 italic">Private Repository</p>
-          )}
-        </div>
-
-        <p className="mb-2">{selectedProject.shortDesc}</p>
-        {selectedProject.longDesc && (
-          <p className="mb-4 text-gray-700">{selectedProject.longDesc}</p>
-        )}
-        {selectedProject.tools && (
-          <p className="mb-4">
-            <strong>Tools:</strong> {selectedProject.tools}
-          </p>
-        )}
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {selectedProject.screenshots.map((shot) => (
-            <div
-              key={shot.title}
-              className="bg-white border border-gray-200 rounded-xl shadow-md p-3 hover:shadow-lg transition"
-            >
-              <p className="font-semibold mb-2">{shot.title}</p>
-              {shot.img ? (
-                <img
-                  src={shot.img}
-                  alt={shot.title}
-                  className="rounded-lg shadow-sm w-full object-contain hover:scale-105 transition-transform"
-                />
-              ) : (
-                <div className="w-full h-40 bg-gray-100 flex items-center justify-center rounded-lg text-gray-400 italic">
-                  No Image
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
-    );
-  }
+export default function Projects() {
+  const navigate = useNavigate();
 
   return (
     <div className="p-6 max-w-6xl mx-auto">
-      <h1 className="text-3xl font-bold mb-6 text-center">My Projects</h1>
+      <button
+        onClick={() => navigate("/")}
+        className="mb-6 px-4 py-2 bg-gray-200 rounded-lg hover:bg-gray-300"
+      >
+        ← Back
+      </button>
+
+      <h1 className="text-3xl font-bold text-center mb-6">My Projects</h1>
+
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {projectsData.map((project) => (
           <div
             key={project.id}
-            className="bg-white border border-gray-200 rounded-xl shadow-md p-5 cursor-pointer hover:shadow-lg hover:border-sky-500 hover:scale-105 transition-all duration-200"
-            onClick={() => setSelectedProject(project)}
+            className="bg-white border rounded-xl shadow-md p-5"
           >
-            {project.homeImg ? (
-              <img
-                src={project.homeImg}
-                alt={project.title}
-                className="w-full h-48 object-cover rounded-lg mb-3"
-              />
-            ) : (
-              <div className="w-full h-48 bg-gray-100 flex items-center justify-center rounded-lg text-gray-400 italic mb-3">
-                No Image
-              </div>
-            )}
-            <h2 className="text-lg font-semibold mb-2">{project.title}</h2>
-            <p className="text-gray-700 text-sm mb-3">{project.shortDesc}</p>
-            <div className="flex flex-wrap gap-2">
+            <img
+              src={project.homeImg}
+              className="w-full h-48 object-cover rounded-lg mb-3"
+            />
+
+            <h2 className="font-semibold">{project.title}</h2>
+            <p className="text-sm text-gray-600 mt-2">{project.desc}</p>
+
+            <div className="flex flex-wrap gap-2 mt-3">
               {project.skills.map((skill) => (
-                <div
-                  key={skill}
-                  className="bg-gray-100 px-3 py-1 rounded-lg text-sm shadow-sm"
-                >
-                  {skill}
-                </div>
+                <SkillBadge key={skill} skill={skill} />
               ))}
             </div>
+
+            {project.repoLink ? (
+              <a
+                href={project.repoLink}
+                target="_blank"
+                className="text-blue-600 underline text-sm mt-2 inline-block"
+              >
+                Go To Repository
+              </a>
+            ) : (
+              <p className="italic text-gray-400 text-sm mt-2">
+                Private Repository
+              </p>
+            )}
           </div>
         ))}
       </div>
     </div>
   );
 }
-
-export default Projects;
