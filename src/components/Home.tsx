@@ -6,7 +6,7 @@ import waLogo from "../assets/logo/wa-logo.png";
 import telegramLogo from "../assets/logo/telegram-logo.png";
 import linkedinLogo from "../assets/logo/linkedin-logo.png";
 import myPhoto from "../assets/my-photo.jpeg";
-import cvFile from "../assets/Fiorentika-Devasha-Ramadhina-CV-DA.pdf";
+import cvFile from "../assets/Fiorentika-Devasha-Ramadhina-CV-DA-DE.pdf";
 import pythonLogo from "../assets/logo/python-logo.png";
 import sqlLogo from "../assets/logo/sql-logo.png";
 import powerbiLogo from "../assets/logo/powerbi-logo.png";
