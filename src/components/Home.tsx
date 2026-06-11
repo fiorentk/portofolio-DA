@@ -16,14 +16,20 @@ import mysqlLogo from "../assets/logo/mysql-logo.png";
 import postgresqlLogo from "../assets/logo/postgresql-logo.png";
 import mongodbLogo from "../assets/logo/mongodb-logo.png";
 import githubLogo from "../assets/logo/github.png";
-import awsLogo from "../assets/logo/aws-logo.png";
+import awss3Logo from "../assets/logo/aws-s3-logo.png";
+import awsdmsLogo from "../assets/logo/aws-dms-logo.png";
+import awsathenaLogo from "../assets/logo/aws-athena-logo.png";
+import awsredshiftLogo from "../assets/logo/redshift-logo.png";
+import awsiamLogo from "../assets/logo/aws-iam-logo.png";
 import reactLogo from "../assets/logo/react-logo.png";
 import nextLogo from "../assets/logo/next-logo.png";
 import nodeLogo from "../assets/logo/node-logo.png";
 import linuxLogo from "../assets/logo/linux-command-logo.png";
 import trelloLogo from "../assets/logo/trello-logo.png";
-import microsoftLogo from "../assets/logo/microsoft-logo.png";
+import mssql from "../assets/logo/mssql-logo.png";
 import airflowLogo from "../assets/logo/airflow-logo.png";
+import fastapiLogo from "../assets/logo/fastapi-logo.png";
+import dockerLogo from "../assets/logo/docker-logo.png";
 
 interface Contact {
   name: string;
@@ -45,19 +51,8 @@ interface CorePoint {
 }
 
 interface Skill {
-  title: string;
+  name: string;
   img: string;
-  img2?: string;
-  img3?: string;
-  points: string[];
-}
-
-interface OtherSkill {
-  title: string;
-  img: string;
-  img2?: string;
-  img3?: string;
-  points: string[];
 }
 
 interface Project {
@@ -77,112 +72,56 @@ function Home() {
   const cores: CorePoint[] = [
     {
       id: 1,
-      name: "Programming & Analysis",
-      skills: "Python, SQL, Excel",
+      name: "Data Engineering",
+      skills:
+        "Apache Airflow, ETL/ELT Pipelines, AWS S3, Redshift, Athena, DMS",
     },
     {
       id: 2,
-      name: "Dashboards & Visualization",
-      skills: "Tableau, Power BI, Looker",
+      name: "Data Analysis & BI",
+      skills: "Python, SQL, Tableau, Power BI, Looker, Excel",
     },
     {
       id: 3,
       name: "Database Systems",
-      skills: "MySQL, PostgreSQL, SQL Server, Redshift, MongoDB",
+      skills:
+        "PostgreSQL, MySQL, Microsoft SQL Server, MongoDB, Amazon Redshift",
     },
   ];
   const skills: Skill[] = [
-    {
-      title: "Programming & Analysis",
-      img: pythonLogo,
-      img2: sqlLogo,
-      img3: microsoftLogo,
-      points: [
-        "Python: perform data cleaning, analysis, and visualization using NumPy, Pandas, Matplotlib, and Seaborn; build basic ML models with scikit-learn",
-        "SQL: write queries with joins and aggregations to extract data for analysis",
-        "Office: analyze data in Excel (Pivot Tables, XLOOKUP, SUMIFS, charts) and create reports using PowerPoint and Word",
-      ],
-    },
-    {
-      title: "Data Visualization",
-      img: tableauLogo,
-      img2: powerbiLogo,
-      img3: lookerLogo,
-      points: [
-        "Design and build interactive dashboards and analytical reports using Tableau, Power BI, and Looker",
-      ],
-    },
-    {
-      title: "Databases",
-      img: mysqlLogo,
-      img2: postgresqlLogo,
-      img3: mongodbLogo,
-      points: [
-        "Manage and query relational databases such as MySQL, PostgreSQL, Amazon Redshift, and SQL Server",
-        "Handle NoSQL databases using MongoDB",
-      ],
-    },
-  ];
+    { name: "Python", img: pythonLogo },
+    { name: "SQL", img: sqlLogo },
+    { name: "Apache Airflow", img: airflowLogo },
 
-  const additionalSkills: OtherSkill[] = [
-    {
-      title: "Web Development",
-      img: nextLogo,
-      img2: nodeLogo,
-      img3: reactLogo,
-      points: [
-        "Build responsive web interfaces using React.js and Next.js",
-        "Develop and maintain APIs using FastAPI and Node.js",
-      ],
-    },
-    {
-      title: "ETL / Data Pipelines",
-      img: airflowLogo,
-      points: [
-        "Design, maintain, and schedule ETL pipelines using Apache Airflow for data workflows",
-      ],
-    },
-    {
-      title: "AWS",
-      img: awsLogo,
-      points: [
-        "Manage cloud storage and data migration using Amazon S3 and DMS",
-        "Set up IAM roles and permissions for secure access control",
-      ],
-    },
-    {
-      title: "Git/GitHub",
-      img: githubLogo,
-      points: [
-        "Use Git for version control, branching, and pull request workflows",
-      ],
-    },
-    {
-      title: "Linux & Shell Scripting",
-      img: linuxLogo,
-      points: [
-        "Use basic Linux commands and write shell scripts for automation",
-      ],
-    },
-    {
-      title: "Trello (Project Management)",
-      img: trelloLogo,
-      points: ["Manage tasks and track project progress using Trello boards"],
-    },
+    { name: "Amazon S3", img: awss3Logo },
+    { name: "AWS DMS", img: awsdmsLogo },
+    { name: "AWS IAM", img: awsiamLogo },
+    { name: "Amazon Redshift", img: awsredshiftLogo },
+    { name: "AWS Athena", img: awsathenaLogo },
+
+    { name: "Tableau", img: tableauLogo },
+    { name: "Power BI", img: powerbiLogo },
+    { name: "Looker", img: lookerLogo },
+
+    { name: "PostgreSQL", img: postgresqlLogo },
+    { name: "MySQL", img: mysqlLogo },
+    { name: "Microsoft SQL Server", img: mssql },
+    { name: "MongoDB", img: mongodbLogo },
+
+    { name: "FastAPI", img: fastapiLogo },
+    { name: "Docker", img: dockerLogo },
+
+    { name: "React", img: reactLogo },
+    { name: "Next.js", img: nextLogo },
+    { name: "Node.js", img: nodeLogo },
+
+    { name: "GitHub", img: githubLogo },
+    { name: "Linux", img: linuxLogo },
+    { name: "Trello", img: trelloLogo },
   ];
   const experience: Experience[] = [
     {
       id: 1,
-      name: "Airlangga University",
-      duration: "Aug 2018 – Nov 2022 | GPA 3.42 / 4.00",
-      jobtitle: "Bachelor's Degree in Statistics",
-      desc: [
-        "Learned core statistical methods such as hypothesis testing, regression (linear & logistic), ANOVA, and time series analysis.",
-        "Applied R, C++, Excel, Minitab, SPSS, Tableau, and ArcView GIS for academic projects and data analysis tasks.",
-      ],
-    },
-    {
-      id: 2,
       name: "PT Pos Indonesia – Bootcamp Digital Talent II",
       duration: "Jan 2024 – Jul 2024",
       jobtitle: "Bootcamp Program",
@@ -193,113 +132,153 @@ function Home() {
       ],
     },
     {
-      id: 3,
-      name: "PT Pos Indonesia – Reporting Data Analytics",
-      duration: "Aug 2024 – Nov 2025",
-      jobtitle: "Data Analyst",
+      id: 2,
+      name: "PT Pos Indonesia",
+      duration: "Aug 2024 – Present",
+      jobtitle: "Reporting and Data Analytics",
       desc: [
-        "Performed end-to-end data analysis using Python, SQL, and Excel, and produced analytical reports with actionable insights.",
-        "Built interactive Tableau dashboards with calculated fields and custom measures.",
+        "Developed, maintained, and automated 20+ production ETL pipelines using Apache Airflow, Python, and SQL across databases and cloud storage.",
+        "Monitored workflow execution, investigated failures, and resolved pipeline issues.",
+        "Processed, transformed, and validated datasets to support reporting and analytics.",
+        "Developed 10+ Tableau dashboards using calculated fields and custom measures.",
+        "Performed end-to-end data analysis using Python, SQL, Excel, and Tableau.",
+        "Delivered analytical reports and actionable business insights.",
       ],
     },
     {
-      id: 4,
-      name: "PT Pos Indonesia – Reporting Data Analytics",
-      duration: "Dec 2025 – present",
-      jobtitle: "Data Engineer",
+      id: 3,
+      name: "Additional Experience",
+      duration: "2025",
+      jobtitle: "Achievements & Software Engineering",
       desc: [
-        "Built and maintained ETL pipelines using Apache Airflow with Python and SQL.",
-        "Monitored workflows and troubleshot failures to ensure reliable data processing.",
-        "Processed and transformed data to deliver analytics-ready datasets.",
-        "Developed and documented REST APIs using FastAPI and Pydantic.",
+        "Awarded 2nd Place in PosIND Innovation Award 2025 for developing a digital shipment receipt solution using Next.js and Node.js.",
+        "Developed and documented REST APIs using FastAPI, Pydantic, and Docker.",
       ],
     },
   ];
-
   const projectsData: Project[] = [
     {
       id: 1,
-      title: "PosAja! Customer Engagement Dashboard",
-      skills: ["Tableau"],
+      title: "Enterprise ETL & Data Integration Pipelines (20+ Pipelines)",
+      skills: [
+        "Python",
+        "SQL",
+        "Apache Airflow",
+        "AWS S3",
+        "Redshift",
+        "Athena",
+      ],
     },
-    {
-      id: 2,
-      title: "PosAja! Digital Business Performance Dashboard",
-      skills: ["Tableau"],
-    },
+    // {
+    //   id: 2,
+    //   title: "Data Warehouse & Reporting Data Mart Development",
+    //   skills: ["SQL", "Redshift", "Data Warehousing"],
+    // },
     {
       id: 3,
-      title: "Remittance Fraud Risk Dashboard",
-      skills: ["Tableau"],
+      title: "Business Intelligence Dashboards (10+ Tableau Dashboards)",
+      skills: ["Tableau", "SQL"],
     },
     {
       id: 4,
-      title: "Cheap Food Market Operation Dashboard",
-      skills: ["Tableau"],
-    },
-    {
-      id: 5,
-      title: "PLN Transaction Dashboard",
-      skills: ["Tableau"],
-    },
-    {
-      id: 6,
       title: "Sentiment Analysis API",
       skills: ["Python", "FastAPI", "Docker"],
     },
     {
-      id: 7,
+      id: 5,
       title: "Route Optimization API",
       skills: ["Python", "FastAPI", "Docker"],
     },
     {
-      id: 8,
-      title:
-        "Analysis of Suspected Fraud Cases in Cash-In and Cash-Out Activities at Counters",
-      skills: ["Python", "Tableau"],
-    },
-    {
-      id: 9,
-      title: "Analysis Report of the Revenue Decline in PosAja!",
-      skills: ["Python", "Tableau"],
-    },
-    {
-      id: 10,
-      title:
-        "Analysis Report of BPJS Employment Contribution Payment Retention",
-      skills: ["Python", "Tableau"],
-    },
-    {
-      id: 11,
-      title: "Analysis Report of Delivery Performance",
-      skills: ["Python", "Tableau"],
-    },
-    {
-      id: 12,
-      title: "Bootcamp Digital Talent II Project",
-      skills: ["Figma", "MySQL"],
-    },
-    {
-      id: 13,
-      title: "Predicting House Prices – Python (Study Case)",
-      skills: ["Python", "Machine Learning"],
-    },
-    {
-      id: 14,
-      title: "Rocket Landing Predictions – Python (Study Case)",
-      skills: ["Python", "Machine Learning"],
-    },
-    {
-      id: 15,
-      title: "Credit Score Classification – Python (Study Case)",
-      skills: ["Python", "Machine Learning"],
-    },
-    {
-      id: 16,
-      title: "Customer Churn Prediction – Python (Study Case)",
-      skills: ["Python", "Machine Learning"],
+      id: 6,
+      title: "Nusantara Journey Card - Digital Shipment Receipt Solution",
+      skills: ["Next.js", "Node.js"],
     },
   ];
+  // const projectsData: Project[] = [
+  //   {
+  //     id: 1,
+  //     title: "PosAja! Customer Engagement Dashboard",
+  //     skills: ["Tableau"],
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "PosAja! Digital Business Performance Dashboard",
+  //     skills: ["Tableau"],
+  //   },
+  //   {
+  //     id: 3,
+  //     title: "Remittance Fraud Risk Dashboard",
+  //     skills: ["Tableau"],
+  //   },
+  //   {
+  //     id: 4,
+  //     title: "Cheap Food Market Operation Dashboard",
+  //     skills: ["Tableau"],
+  //   },
+  //   {
+  //     id: 5,
+  //     title: "PLN Transaction Dashboard",
+  //     skills: ["Tableau"],
+  //   },
+  //   {
+  //     id: 6,
+  //     title: "Sentiment Analysis API",
+  //     skills: ["Python", "FastAPI", "Docker"],
+  //   },
+  //   {
+  //     id: 7,
+  //     title: "Route Optimization API",
+  //     skills: ["Python", "FastAPI", "Docker"],
+  //   },
+  //   {
+  //     id: 8,
+  //     title:
+  //       "Analysis of Suspected Fraud Cases in Cash-In and Cash-Out Activities at Counters",
+  //     skills: ["Python", "Tableau"],
+  //   },
+  //   {
+  //     id: 9,
+  //     title: "Analysis Report of the Revenue Decline in PosAja!",
+  //     skills: ["Python", "Tableau"],
+  //   },
+  //   {
+  //     id: 10,
+  //     title:
+  //       "Analysis Report of BPJS Employment Contribution Payment Retention",
+  //     skills: ["Python", "Tableau"],
+  //   },
+  //   {
+  //     id: 11,
+  //     title: "Analysis Report of Delivery Performance",
+  //     skills: ["Python", "Tableau"],
+  //   },
+  //   {
+  //     id: 12,
+  //     title: "Bootcamp Digital Talent II Project",
+  //     skills: ["Figma", "MySQL"],
+  //   },
+  //   {
+  //     id: 13,
+  //     title: "Predicting House Prices – Python (Study Case)",
+  //     skills: ["Python", "Machine Learning"],
+  //   },
+  //   {
+  //     id: 14,
+  //     title: "Rocket Landing Predictions – Python (Study Case)",
+  //     skills: ["Python", "Machine Learning"],
+  //   },
+  //   {
+  //     id: 15,
+  //     title: "Credit Score Classification – Python (Study Case)",
+  //     skills: ["Python", "Machine Learning"],
+  //   },
+  //   {
+  //     id: 16,
+  //     title: "Customer Churn Prediction – Python (Study Case)",
+  //     skills: ["Python", "Machine Learning"],
+  //   },
+  // ];
   const courses: Course[] = [
     {
       title: "IBM Data Science Professional Certificate (10 courses total)",
@@ -378,6 +357,9 @@ function Home() {
           </h1>
           <div className="flex flex-wrap justify-center md:justify-start gap-3 mb-5">
             <span className="bg-sky-200 text-sky-700 px-4 py-2 rounded-full text-sm">
+              Data Engineer
+            </span>
+            <span className="bg-sky-200 text-sky-700 px-4 py-2 rounded-full text-sm">
               Data Analyst
             </span>
             <span className="border border-sky-200 text-sky-700 px-4 py-2 rounded-full text-sm">
@@ -388,11 +370,11 @@ function Home() {
             </span>
           </div>
           <p className="text-gray-700 mb-6 text-base md:text-lg">
-            Data Analyst with 2+ years of experience using Python, SQL, Excel,
-            and Tableau. Experienced in data querying, analysis, dashboard
-            development, and reporting. Familiar with data engineering and
-            software engineering concepts. Fast learner, adaptable, and
-            results-oriented.
+            Data Engineer and Data Analyst with 2+ years of experience building
+            ETL pipelines, developing dashboards, and delivering insights for
+            reporting and analytics. Proficient in Python, SQL, Apache Airflow,
+            AWS, and Tableau. Familiar with software engineering concepts. Fast
+            learner and adaptable.
           </p>
           <h2 className="text-sky-600 font-semibold mb-3 text-lg">
             Core Expertise:
@@ -409,75 +391,6 @@ function Home() {
           ))}
         </div>
       </div>
-
-      {/* Skills */}
-      <h1 className="text-3xl font-bold text-center text-sky-600">Skills</h1>
-      <div className="flex flex-wrap justify-center gap-6 mb-4">
-        {skills.map((skill) => (
-          <div
-            key={skill.title}
-            className="bg-white border border-sky-200 rounded-xl shadow-md p-5 w-64 text-center hover:shadow-lg hover:border-sky-500 hover:scale-105 transition-transform duration-200"
-          >
-            <div className="flex justify-center gap-2 mb-3">
-              <img
-                src={skill.img}
-                alt={skill.title}
-                className="h-12 object-contain"
-              />
-              {skill.img2 && (
-                <img src={skill.img2} alt="" className="h-12 object-contain" />
-              )}
-              {skill.img3 && (
-                <img src={skill.img3} alt="" className="h-12 object-contain" />
-              )}
-            </div>
-            <h3 className="text-lg font-semibold mb-2 text-sky-600">
-              {skill.title}
-            </h3>
-            <ul className="text-gray-700 text-sm text-left list-disc pl-5 space-y-1">
-              {skill.points.map((point, idx) => (
-                <li key={idx}>{point}</li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
-
-      {/* Additional Skills */}
-      <h1 className="text-3xl font-bold text-center text-sky-600">
-        Additional Skills
-      </h1>
-      <div className="flex flex-wrap justify-center gap-6 mb-16">
-        {additionalSkills.map((skill) => (
-          <div
-            key={skill.title}
-            className="bg-white border border-sky-200 rounded-xl shadow-md p-5 w-64 text-center hover:shadow-lg hover:border-sky-500 hover:scale-105 transition-transform duration-200"
-          >
-            <div className="flex justify-center gap-2 mb-3">
-              <img
-                src={skill.img}
-                alt={skill.title}
-                className="h-12 object-contain"
-              />
-              {skill.img2 && (
-                <img src={skill.img2} alt="" className="h-12 object-contain" />
-              )}
-              {skill.img3 && (
-                <img src={skill.img3} alt="" className="h-12 object-contain" />
-              )}
-            </div>
-            <h3 className="text-lg font-semibold mb-2 text-sky-600">
-              {skill.title}
-            </h3>
-            <ul className="text-gray-700 text-sm text-left list-disc pl-5 space-y-1">
-              {skill.points.map((point, idx) => (
-                <li key={idx}>{point}</li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
-
       {/* Education & Work Experience */}
       <div className="w-full flex flex-col items-center gap-8">
         <h1 className="text-3xl font-bold text-center text-sky-600">
@@ -508,18 +421,42 @@ function Home() {
           ))}
         </div>
       </div>
+      {/* Skills & Tools */}
+      <div className="w-full flex flex-col gap-8">
+        <h1 className="text-3xl font-bold text-center text-sky-600">
+          Skills & Tools
+        </h1>
 
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-6">
+          {skills.map((skill) => (
+            <div
+              key={skill.name}
+              className="bg-white border border-sky-200 rounded-xl shadow-md p-5 flex flex-col items-center justify-center hover:shadow-lg hover:border-sky-500 hover:scale-105 transition-transform duration-200"
+            >
+              <img
+                src={skill.img}
+                alt={skill.name}
+                className="h-14 object-contain mb-3"
+              />
+
+              <span className="text-sm font-medium text-gray-700 text-center">
+                {skill.name}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
       {/* Projects */}
       <div className="w-full flex flex-col gap-6">
         <h1 className="text-3xl font-bold text-center text-sky-600">
           Projects
         </h1>
-        <button
+        {/* <button
           onClick={() => navigate("/projects")}
           className="mx-auto text-sky-600 font-semibold hover:underline transition-all duration-200"
         >
           See details here ➔
-        </button>
+        </button> */}
         <div className="grid gap-4 grid-cols-1">
           {projectsData.map((project) => (
             <li
