@@ -34,6 +34,9 @@ import houseprice1 from "../assets/study-case/houseprice1.png";
 import houseprice2 from "../assets/study-case/houseprice2.png";
 import houseprice3 from "../assets/study-case/houseprice3.png";
 import houseprice4 from "../assets/study-case/houseprice4.png";
+import etlAirflow from "../assets/ETL/etl-airflow.png";
+import etlDMS from "../assets/ETL/etl-DMS.png";
+import njc from "../assets/NJC/njc-1.png";
 
 interface Screenshot {
   title?: string;
@@ -51,6 +54,30 @@ interface Project {
 }
 
 const projectsData: Project[] = [
+  {
+    id: 1,
+    title: "ETL Pipelines with Apache Airflow",
+    homeImg: etlAirflow,
+    desc: "Collection of ETL pipeline implementations orchestrated with Apache Airflow, integrating data from various databases into Amazon S3 and Amazon Redshift for analytics and reporting.",
+    screenshots: [{ img: etlAirflow }],
+    skills: ["Python", "Apache Airflow", "AWS S3", "Amazon Redshift"],
+  },
+  {
+    id: 2,
+    title: "ETL Pipelines with AWS DMS",
+    homeImg: etlDMS,
+    desc: "Collection of ETL and data migration projects using AWS Database Migration Service (DMS) to move and synchronize data across multiple database platforms and cloud data warehouses.",
+    screenshots: [{ img: etlDMS }],
+    skills: ["AWS DMS", "AWS", "PostgreSQL", "Amazon Redshift"],
+  },
+  {
+    id: 3,
+    title: "Nusantara Journey Card",
+    homeImg: njc,
+    desc: "A web application built with Next.js that won 2nd Place in the PosIND Innovation Award. Developed to support digital innovation initiatives and enhance user experience through a modern web platform.",
+    screenshots: [{ img: njc }],
+    skills: ["Next.js", "TypeScript", "React"],
+  },
   {
     id: 1,
     title: "PosAja! Customer Engagement Dashboard",

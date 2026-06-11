@@ -1,4 +1,4 @@
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 // Import images
 import emailLogo from "../assets/logo/email-logo.png";
@@ -67,7 +67,7 @@ interface Course {
 }
 
 function Home() {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const cores: CorePoint[] = [
     {
@@ -167,17 +167,18 @@ function Home() {
         "AWS S3",
         "Redshift",
         "Athena",
+        "AWS DMS",
       ],
     },
-    // {
-    //   id: 2,
-    //   title: "Data Warehouse & Reporting Data Mart Development",
-    //   skills: ["SQL", "Redshift", "Data Warehousing"],
-    // },
     {
-      id: 3,
+      id: 2,
       title: "Business Intelligence Dashboards (10+ Tableau Dashboards)",
       skills: ["Tableau", "SQL"],
+    },
+    {
+      id: 3,
+      title: "Nusantara Journey Card - Digital Shipment Receipt Solution",
+      skills: ["Next.js", "Node.js"],
     },
     {
       id: 4,
@@ -188,11 +189,6 @@ function Home() {
       id: 5,
       title: "Route Optimization API",
       skills: ["Python", "FastAPI", "Docker"],
-    },
-    {
-      id: 6,
-      title: "Nusantara Journey Card - Digital Shipment Receipt Solution",
-      skills: ["Next.js", "Node.js"],
     },
   ];
   // const projectsData: Project[] = [
@@ -451,12 +447,12 @@ function Home() {
         <h1 className="text-3xl font-bold text-center text-sky-600">
           Projects
         </h1>
-        {/* <button
+        <button
           onClick={() => navigate("/projects")}
           className="mx-auto text-sky-600 font-semibold hover:underline transition-all duration-200"
         >
-          See details here ➔
-        </button> */}
+          See all project details here ➔
+        </button>
         <div className="grid gap-4 grid-cols-1">
           {projectsData.map((project) => (
             <li
