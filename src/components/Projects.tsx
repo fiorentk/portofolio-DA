@@ -60,7 +60,14 @@ const projectsData: Project[] = [
     homeImg: etlAirflow,
     desc: "Collection of ETL pipeline implementations orchestrated with Apache Airflow, integrating data from various databases into Amazon S3 and Amazon Redshift for analytics and reporting.",
     screenshots: [{ img: etlAirflow }],
-    skills: ["Python", "Apache Airflow", "AWS S3", "Amazon Redshift"],
+    skills: [
+      "Python",
+      "SQL",
+      "Apache Airflow",
+      "AWS S3",
+      "AWS Redshift",
+      "AWS Athena",
+    ],
   },
   {
     id: 2,
@@ -68,7 +75,7 @@ const projectsData: Project[] = [
     homeImg: etlDMS,
     desc: "Collection of ETL and data migration projects using AWS Database Migration Service (DMS) to move and synchronize data across multiple database platforms and cloud data warehouses.",
     screenshots: [{ img: etlDMS }],
-    skills: ["AWS DMS", "AWS", "PostgreSQL", "Amazon Redshift"],
+    skills: ["AWS DMS", "AWS S3", "AWS Redshift"],
   },
   {
     id: 3,
