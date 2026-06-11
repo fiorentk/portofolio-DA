@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 // Import images
 import emailLogo from "../assets/logo/email-logo.png";
@@ -67,7 +67,7 @@ interface Course {
 }
 
 function Home() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const cores: CorePoint[] = [
     {
