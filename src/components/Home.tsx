@@ -30,6 +30,9 @@ import mssql from "../assets/logo/mssql-logo.png";
 import airflowLogo from "../assets/logo/airflow-logo.png";
 import fastapiLogo from "../assets/logo/fastapi-logo.png";
 import dockerLogo from "../assets/logo/docker-logo.png";
+import sparkLogo from "../assets/logo/spark-logo.png";
+import kafkaLogo from "../assets/logo/kafka-logo.png";
+import bigqueryLogo from "../assets/logo/bigquery-logo.png";
 
 interface Contact {
   name: string;
@@ -92,6 +95,8 @@ function Home() {
     { name: "Python", img: pythonLogo },
     { name: "SQL", img: sqlLogo },
     { name: "Apache Airflow", img: airflowLogo },
+    { name: "Apache Spark", img: sparkLogo },
+    { name: "Apache Kafka", img: kafkaLogo },
 
     { name: "Amazon S3", img: awss3Logo },
     { name: "AWS DMS", img: awsdmsLogo },
@@ -107,6 +112,8 @@ function Home() {
     { name: "MySQL", img: mysqlLogo },
     { name: "Microsoft SQL Server", img: mssql },
     { name: "MongoDB", img: mongodbLogo },
+
+    { name: "BigQuery", img: bigqueryLogo },
 
     { name: "FastAPI", img: fastapiLogo },
     { name: "Docker", img: dockerLogo },
