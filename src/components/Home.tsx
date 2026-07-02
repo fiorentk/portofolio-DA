@@ -144,7 +144,7 @@ function Home() {
       duration: "Aug 2024 – Present",
       jobtitle: "Reporting and Data Analytics",
       desc: [
-        "Developed, maintained, and automated 20+ production ETL pipelines using Apache Airflow, Python, and SQL across databases and cloud storage.",
+        "Developed, maintained, and automated 20+ production ETL pipelines using Apache Airflow, Apache Kafka, Python, and SQL across databases and cloud storage.",
         "Monitored workflow execution, investigated failures, and resolved pipeline issues.",
         "Processed, transformed, and validated datasets to support reporting and analytics.",
         "Developed 10+ Tableau dashboards using calculated fields and custom measures.",
